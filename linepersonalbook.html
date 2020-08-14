@@ -18,6 +18,7 @@
                     </svg> 
                     Scan Code
                 </button>
+                Scan Result : <span id="scan_result"></span>
             </div>
             <div class="col">
                 <button class="btn btn-block btn-success" id="btnSendMessage">
@@ -71,11 +72,29 @@
                         }else{
                             if (liff.scanCode) {
                                 liff.scanCode().then(result => {
-                                    alert(JSON.stringify(result));
+                                    // alert(JSON.stringify(result));
+                                    var obj = JSON.parse(result);
+                                    $('#scan_result').html(obj.value);
                                 }).catch(err => {
                                     alert('scanCode failed!')
                                 });
                             }
+                        }
+                    });
+
+                    // เหตุการณ์กดปุ่ม send message
+                    $('button#btnSendMessage').click(function(){
+                        if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
+                            alert('ต้องเปิดบนมือถือเท่านั้น');
+                        }else{
+                            liff.sendMessages([{
+                                'type': 'text',
+                                'text': "You've successfully sent a message! Hooray!"
+                            }]).then(function() {
+                                window.alert('Message sent');
+                            }).catch(function(error) {
+                                window.alert('Error sending message: ' + error);
+                            });
                         }
                     });
                 }else{
