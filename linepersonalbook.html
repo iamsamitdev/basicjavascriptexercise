@@ -87,6 +87,9 @@
                                         window.alert('Error sending message: ' + error);
                                     });
 
+                                    // ปิดหน้าต่าง liff
+                                    liff.closeWindow();
+
                                 }).catch(err => {
                                     alert('scanCode failed!')
                                 });
