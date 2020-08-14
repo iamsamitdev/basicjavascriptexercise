@@ -1,0 +1,33 @@
+{
+    "category": 
+    {
+        "electronic": [
+            {
+                "name": "Notebook",
+                "price": 20000,
+                "qty": 5,
+                "img": "https://notebookspec.com/nbs/upload_notebook/20180622-151315_c.jpg"
+            },
+            {
+                "name": "Camera",
+                "price": 18500,
+                "qty": 2,
+                "img": "https://kingbueno.com/wp-content/uploads/2019/07/maxresdefault.jpg"
+            }
+        ],
+        "cloth": [
+            {
+                "name": "Levi 501",
+                "price": 1250,
+                "qty": 20,
+                "img": "https://chillchilljapan.com/wp-content/uploads/2018/06/34963339_1988215937868844_2231007206990413824_n.jpg"
+            },
+            {
+                "name": "POLO",
+                "price": 599,
+                "qty": 12,
+                "img": "https://d2pa5gi5n2e1an.cloudfront.net/service/th/images/mens-fashion/price/10686/10686218/MF_Jil_Sander_terry_cloth_polo_shirt_Brown_1.jpg"
+            }
+        ]
+    }
+}

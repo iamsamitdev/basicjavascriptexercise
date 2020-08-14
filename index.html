@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript</title>
+</head>
+
+<body>
+    
+    <div id="d1"></div>
+    <div id="d2"></div>
+
+    <select  id="selectcolor" onchange="changebg(selectcolor.value)">
+        <option value="0">Please select color</option>
+        <option value="1">Blue</option>
+        <option value="2">Red</option>
+        <option value="3">Yellow</option>
+    </select>
+
+    <button onclick="wakeup()">Click now</button>
+    <button onclick="showinfo('Samit','samit@gmail.com')">Show info</button>
+    <button onclick="document.write('พื้นที่คือ ' +area(5, 6)[0]+ ' ตรม. ยอดเงินที่ใช้ ' + area(5,6)[1].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + ' บาท')">Calculate Area</button>
+
+    <!-- <script src="_01_variable.js"></script> -->
+    <!-- <script src="_02_confirm.js"></script> -->
+    <!-- <script src="_03_prompt.js"></script> -->
+    <!-- <script src="_04_switch_case.js"></script> -->
+    <!-- <script src="_05_forloop.js"></script> -->
+    <!-- <script src="_06_function.js"></script> -->
+    <script src="_07_array_object.js"></script>
+</body>
+
+</html>

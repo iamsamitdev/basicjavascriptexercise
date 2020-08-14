@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic jQuery</title>
+</head>
+<body>
+
+    <h1 class="head">Basic jQuery</h1>
+    <h1>Welcome</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima officia repellendus ipsa molestias obcaecati at commodi quod minus, iure amet doloribus culpa incidunt quo voluptas accusamus sint adipisci eos mollitia!</p>
+    Firstname: <input type="text" name="firstname" id="firstname"><br>
+    Email: <input type="email" name="email" id="email"><br>
+    Birth Date: <input type="date" name="birthdate" id="birthdate">
+    <button>Submit</button>
+    <p id="result"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        // ฟังก์ชันคำนวณอายุ
+        function getAge(dateVal) {
+            var birthday = new Date(dateVal); // วันเกิดที่รับมา
+            var today = new Date(); // วันที่ปัจจุบัน
+            var ageInMilliseconds = new Date(today - birthday); // เอามาลบกันได้ผลต่างเป็น miliisec
+            var years = ageInMilliseconds / (24 * 60 * 60 * 1000 * 365.25);
+            var months = 12 * (years % 1);
+            var days = Math.floor(30 * (months % 1));
+            return Math.floor(years) + ' years ' + Math.floor(months) + ' months ' + days + ' days';
+        }
+
+        $(function(){
+            // alert("Hello jquery");
+            $("h1").hide();  // jquery effect hide
+            $("h1").show(); // jquery effect show
+            // jquery css properties
+            $("h1").css("color","red");
+            $("p").css("background-color","yellow"); 
+            // การใส่เหตุการณ์กดปุ่ม
+            $("button").click(function(){
+                // alert("Hello");
+                // $("p").fadeOut(2000); 
+                // $("p").fadeToggle();
+                // $("p").slideUp(); // ซ่อน
+                $("p").slideToggle();
+                // รับค่าจากฟอร์ม
+                var getfirstname = $("input#firstname").val();
+                var getemail = $("input#email").val();
+                alert(getfirstname+getemail);
+            });
+
+            // เหตุการณ์เมื่อออกจากช่องอีเมล์
+            $("input#email").blur(function(){
+                $("#result").html($("input#firstname").val() + $("input#email").val());
+            });
+
+            // เหตุการณ์เมื่อเลือกวันเกิด
+            $("input#birthdate").change(function(){
+                var getbirthdate = $("input#birthdate").val();
+                $("#result").html(getAge(getbirthdate));
+            });
+        });
+    </script>
+</body>
+</html>

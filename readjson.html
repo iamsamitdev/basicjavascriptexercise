@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Json Data</title>
+</head>
+<body>
+
+    <h3>เลือกหมวดหมู่สินค้า</h3>
+    <select name="category" id="category" onchange="chooseCategory(category.value)">
+        <option value="0">เลือกหมวดหมู่สินค้า</option>
+        <option value="electronic">Electronic</option>
+        <option value="cloth">Cloth</option>
+        <option value="shoe">Shoe</option>
+        <option value="kitchen">Kitchen</option>
+    </select>
+
+    <h1>Product List</h1>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Qty</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <script src="_09_getjson.js"></script>
+</body>
+</html>
